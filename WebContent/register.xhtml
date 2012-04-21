@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+
+    
+    <h:head>
+    	<title>Java Developer Test</title>
+    	<link rel="stylesheet" href="css/reg_style.css" />	
+    </h:head>
+   
+   
+   <h:body bgcolor="white">
+   
+   
+	   <h:form id="registrationForm" >
+	   	   <rich:panel  id="registrationForm" header="Hello. Pleas fill the registration form." style="width: 400px">
+	  
+	   	   	   	<h:panelGrid cellpadding="0" cellspacing="0" columns="1" class="box">
+
+					<h:panelGroup id="fields" rendered="#{registrationBean.user == null}">
+
+	    		 	<h:outputText id="errorMsg" class="errorMsg" rendered="#{registrationBean.user == null}" value="#{registrationBean.answer}" />
+	    		 			<h:panelGroup><dl>
+	    		 				 				
+		    		 			<dt><h:outputLabel value="Username" for="name"/></dt>
+		    		 			<dd><h:inputText value="#{registrationBean.name}" id="name"></h:inputText></dd>
+		    		 			<dd><rich:message for="name" /></dd>
+		    		
+		    					<dt><h:outputLabel value="Birth date" for="birthDate"/></dt>
+		    		 		 	<dd class="calendar"><rich:calendar value="#{registrationBean.birthDate}" id="birthDate" datePattern="dd.MM.yyyy"/></dd>	
+		 						<dd><rich:message for="birthDate" /></dd>
+		 			
+		 						<dt><h:outputLabel value="Email adress" for="email"/></dt>
+		    			 		<dd><h:inputText value="#{registrationBean.email}" id="email"/></dd>	
+		    			 		<dd><rich:message for="email" /></dd>
+	 							  					
+	    					</dl> </h:panelGroup>
+
+
+	    				
+	    				<a4j:commandButton  value="Register me" action="#{registrationBean.addUser}" render="registrationForm" styleClass="cmd"/>
+	    				
+    				</h:panelGroup>
+
+	    				<h:outputText id="resultMsg" class="resultMsg" rendered="#{registrationBean.user != null}" value="Registered successfully" />
+	    				
+  				
+				</h:panelGrid>
+	   	   </rich:panel>	
+	   </h:form>
+	   
+	      
+   </h:body>
+</html>

@@ -1,0 +1,44 @@
+.box{
+	width: 100%;
+}
+
+.innerBox{
+	width: 100%;
+}
+
+.calendar input{
+	width: 90%;
+}
+
+dl input{
+	padding: 0.5em 0;
+	width: 100%;
+
+}
+
+.cmd{
+
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-top: 2em;
+
+	
+	width: 100%;
+}
+
+label{
+	
+	font-size: 120%
+}
+
+dt{
+	margin-top: 2em;
+	margin-bottom: 0.3em;
+}
+dd{
+	margin-left: 0;
+}
+
+.errorMsg{
+	color: red;
+}
